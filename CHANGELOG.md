@@ -12,6 +12,7 @@ and adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### New Features
 
 - You can now wire CodeGraph into agents that don't have a built-in installer target. `codegraph targets add <spec.json>` registers a custom target from a small declarative spec — pick one of three supported config styles (opencode-style `.jsonc`, Codex-style TOML, or the standard `mcpServers` JSON used by Claude Code / Cursor / Gemini) and name the agent's config paths — and from then on `codegraph install --target <id>`, auto-detection, the interactive agent picker, and `codegraph uninstall` all treat it exactly like a built-in. `codegraph targets list` and `codegraph targets remove` manage registrations. This covers opencode forks such as CoDev Code (#1272), TOML-config agents such as Grok Build (#1324, #1396), and Gemini-style agents such as Qwen Code (#968) without waiting for a new CodeGraph release.
+- Custom `mcpServers`-style targets can now omit the `type` field from the server entry, covering agents such as Windsurf whose config expects a `command`/`args`-only entry (#952).
 
 ## [1.5.0] - 2026-07-21
 
